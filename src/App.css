@@ -1,3 +1,28 @@
+.result {
+  border-collapse: collapse;
+  margin:20px 0px;
+  width: 100%;
+}
+
+.res-title-tr {
+  font-size: 12px;
+}
+
+.res-data-tr {
+  font-size: 10px;
+  border-top: solid white 1px;
+  border-bottom: solid white 1px;
+}
+
+.res-data-tr:hover {
+  background-color: green;
+}
+
+.res-data-tr td:hover {
+  color: red;
+  cursor: pointer;
+}
+
 .App {
   text-align: center;
 }
