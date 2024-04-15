@@ -1,8 +1,8 @@
-import { List, ListTypeEnum } from './data.js';
-import { useState } from 'react';
+import { List, ListTypeEnum } from "./data.js";
+import { useState } from "react";
 
 export default function SearchBox() {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState("");
 
   function handleChange(e) {
     setQuery(e.target.value);
@@ -10,26 +10,44 @@ export default function SearchBox() {
 
   return (
     <>
-      <SearchBar
+      <SearchBar query={query} onChange={handleChange} />
+      <List
+        type={ListTypeEnum.MOVE}
         query={query}
-        onChange={handleChange}
+        resultHandler={handleClick}
       />
-      <List type={ListTypeEnum.MOVE} query={query} />
-      <List type={ListTypeEnum.ITEM} query={query} />
-      <List type={ListTypeEnum.ABILITY} query={query} />
-      <List type={ListTypeEnum.NATURE} query={query} />
+      <List
+        type={ListTypeEnum.ITEM}
+        query={query}
+        resultHandler={handleClick}
+      />
+      <List
+        type={ListTypeEnum.ABILITY}
+        query={query}
+        resultHandler={handleClick}
+      />
+      <List
+        type={ListTypeEnum.NATURE}
+        query={query}
+        resultHandler={handleClick}
+      />
     </>
   );
 }
 
 function SearchBar({ query, onChange }) {
   return (
-    <label>
-      Search:{' '}
-      <input
-        value={query}
-        onChange={onChange}
-      />
-    </label>
+    <div className="bar">
+      <label>
+        Search: <input value={query} onChange={onChange} />
+      </label>
+    </div>
   );
+}
+
+function handleClick(e) {
+  let text = e.target.innerText;
+  navigator.clipboard.writeText(text).catch(function (err) {
+    alert("cannot do the copy in this browser");
+  });
 }

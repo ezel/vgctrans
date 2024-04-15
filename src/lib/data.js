@@ -11,7 +11,7 @@ import natureData from "../data/nature.json";
 });
 
 
-function List({ type, query }) {
+function List({ type, query, resultHandler }) {
   let data;
   switch (type) {
     case ListTypeEnum.MOVE: {
@@ -45,29 +45,39 @@ function List({ type, query }) {
   return (
     <div>
       {hasData ? (
-        <table class="result">
+        <table className="result">
           <colgroup>
-            <col class="index" />
+            <col className="col-1" />
+            <col className="col-2" />
+            <col className="col-3" />
+            <col className="col-4" />
+            <col className="col-5" />
+            <col className="col-6" />
+            <col className="col-7" />
+            <col className="col-8" />
+            <col className="col-9" />
+            <col className="col-10" />
+            <col className="col-11" />
           </colgroup>
           <thead>
-            <tr class="res-title-tr">
-              {titles.map((t) => (
-                <th>{t}</th>
+            <tr className="res-title-tr">
+              {titles.map((t, id) => (
+                <th key={id}>{t}</th>
               ))}
             </tr>
           </thead>
           <tbody>
-            {filterRes.map((col) => (
-              <tr class="res-data-tr">
-                {col.map((cell) => (
-                  <td>{cell}</td>
+            {filterRes.map((col, id) => (
+              <tr key={id} className="res-data-tr">
+                {col.map((cell, id) => (
+                  <td key={id} onClick={resultHandler}>{cell}</td>
                 ))}
               </tr>
             ))}
           </tbody>
         </table>
       ) : (
-        <div class="placeholder">No result {type.description}.</div>
+        <div className="placeholder">No result {type.description}.</div>
       )}
     </div>
   );
@@ -81,7 +91,7 @@ function FilterData(source, query) {
   let ids = new Set([]);
   source.map((items) => {
     for (let i = 0; i < items.length; i++) {
-      items[i].split(" ").some((word) => {
+      items[i].split(' ').some((word) => {
         if (word.toLowerCase().startsWith(query)) {
           ids.add(i);
         }
