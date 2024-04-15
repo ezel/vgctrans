@@ -1,6 +1,11 @@
-.bar input {
+.searchbar input {
   width: 600px;
   vertical-align: middle;
+}
+
+.searchbar {
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
 
 .result {
@@ -16,6 +21,7 @@
 }
 .res-title-tr {
   font-size: 14px;
+  color: yellow;
 }
 
 .res-data-tr {

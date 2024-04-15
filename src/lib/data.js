@@ -11,7 +11,7 @@ import natureData from "../data/nature.json";
 });
 
 
-function List({ type, query, resultHandler }) {
+function List({ type, query, maxResultSize=10, resultHandler }) {
   let data;
   switch (type) {
     case ListTypeEnum.MOVE: {
@@ -39,7 +39,7 @@ function List({ type, query, resultHandler }) {
   }
   const titles = data.title;
   const res = data.body;
-  const filterRes = FilterData(res, query.toLowerCase());
+  const filterRes = FilterData(res, query.toLowerCase(), maxResultSize);
   const hasData = filterRes.length > 0;
 
   return (
@@ -77,13 +77,13 @@ function List({ type, query, resultHandler }) {
           </tbody>
         </table>
       ) : (
-        <div className="placeholder">No result {type.description}.</div>
+        <div className="placeholder">No result in {type.description}.</div>
       )}
     </div>
   );
 }
 
-function FilterData(source, query) {
+function FilterData(source, query, maxResultSize) {
   if (query === "") {
     return [];
   }
@@ -96,7 +96,7 @@ function FilterData(source, query) {
           ids.add(i);
         }
       })
-      if (ids.size > MaxListSize) break;
+      if (ids.size >= maxResultSize) break;
     }
   });
 
@@ -120,6 +120,5 @@ const ListTypeEnum = Object.freeze({
   NATURE: Symbol("nature"),
 });
 
-const MaxListSize = 20;
 
 export { List, ListTypeEnum };

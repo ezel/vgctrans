@@ -14,6 +14,7 @@ export default function SearchBox() {
       <List
         type={ListTypeEnum.MOVE}
         query={query}
+        maxResultSize={20}
         resultHandler={handleClick}
       />
       <List
@@ -37,7 +38,7 @@ export default function SearchBox() {
 
 function SearchBar({ query, onChange }) {
   return (
-    <div className="bar">
+    <div className="searchbar">
       <label>
         Search: <input value={query} onChange={onChange} />
       </label>
