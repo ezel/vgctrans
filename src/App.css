@@ -39,6 +39,34 @@
   cursor: pointer;
 }
 
+.flash-div {
+  position:absolute;
+  bottom: 50px;
+  right: 100px;
+  background-color: navajowhite;
+  border-radius: 10px;
+  width: 250px;
+  height: 40px;
+  padding: 10px;
+}
+.flash-div button {
+  float: right;
+}
+.flash-clear {
+  clear: both;
+}
+.flash-p {
+  float: left;
+  font-size: 16px;
+  color: green;
+  margin: 0px;
+  padding: 0px;
+}
+.flash-span-msg {
+  color: greenyellow;
+  font-weight: bold;
+}
+
 .App {
   text-align: center;
 }
