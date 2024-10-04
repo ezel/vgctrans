@@ -4,7 +4,7 @@ module.exports = {
   entry: './src/lib/searchBox.jsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'vt.lib.js',
+    filename: 'vt.lib.jsx',
     libraryTarget: 'module',
     clean: true,
   },
