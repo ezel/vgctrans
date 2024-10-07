@@ -8,6 +8,7 @@ import natureData from "../data/nature.json";
         item.title = item.title.slice(1);
         item.body = item.body.slice(1);
     }
+    return item;
 });
 
 
@@ -95,9 +96,11 @@ function FilterData(source, query, maxResultSize) {
         if (word.toLowerCase().startsWith(query)) {
           ids.add(i);
         }
+        return 0;
       })
       if (ids.size >= maxResultSize) break;
     }
+    return 0;
   });
 
   let res = [];
@@ -106,6 +109,7 @@ function FilterData(source, query, maxResultSize) {
       let tmp = [];
       source.map((items) => {
         tmp.push(items[id]);
+        return 0;
       });
       res.push(tmp);
     }
