@@ -1,6 +1,6 @@
 //import logo from './logo.svg';
 import './App.css';
-import SearchBox from './lib/searchBox.jsx';
+import SearchBox from './searchBox.jsx';
 
 function App() {
   return (

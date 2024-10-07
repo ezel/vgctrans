@@ -1,7 +1,7 @@
-import abilityData from "../data/ability.json";
-import itemData from "../data/item.json";
-import moveData from "../data/move.json";
-import natureData from "../data/nature.json";
+import abilityData from "./data/ability.json";
+import itemData from "./data/item.json";
+import moveData from "./data/move.json";
+import natureData from "./data/nature.json";
 
 [abilityData, itemData, moveData].map((item) => {
     if (item.title.length === 12) {

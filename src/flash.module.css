@@ -1,0 +1,28 @@
+.flashDiv {
+    position:absolute;
+    bottom: 50px;
+    right: 100px;
+    background-color: navajowhite;
+    border-radius: 10px;
+    width: 250px;
+    height: 40px;
+    padding: 10px;
+  }
+  .flashDiv button {
+    float: right;
+  }
+  .flashClear {
+    clear: both;
+  }
+  .flashP {
+    float: left;
+    font-size: 16px;
+    color: green;
+    margin: 0px;
+    padding: 0px;
+  }
+  .flashSpanMsg {
+    color: greenyellow;
+    font-weight: bold;
+  }
+  
