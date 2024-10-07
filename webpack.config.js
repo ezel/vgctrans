@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/lib/searchBox.jsx',
+  entry: './src/translatebox.jsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'vt.lib.jsx',

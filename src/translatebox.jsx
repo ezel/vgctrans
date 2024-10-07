@@ -3,6 +3,7 @@ import abilityData from "./data/ability.json";
 import itemData from "./data/item.json";
 import moveData from "./data/move.json";
 import natureData from "./data/nature.json";
+import React from "react";
 
 [abilityData, itemData, moveData].map((item) => {
     if (item.title.length === 12) {
@@ -12,7 +13,7 @@ import natureData from "./data/nature.json";
     return item;
 });
 
-export default function VTBox() {
+export default function TranslateBox() {
   const [query, setQuery] = useState("");
   const [messages, setMessages] = useState("");
 
