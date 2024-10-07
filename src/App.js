@@ -1,12 +1,12 @@
 //import logo from './logo.svg';
 import './App.css';
-import SearchBox from './searchBox.jsx';
+import VTBox from './translatebox.jsx';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <div><SearchBox /></div>
+        <div><VTBox /></div>
       </header>
     </div>
   );
