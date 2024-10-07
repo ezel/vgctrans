@@ -1,4 +1,4 @@
-import { List, ListTypeEnum } from "./data.js";
+import { List, ListTypeEnum } from "./data.jsx";
 import { useState } from "react";
 
 export default function SearchBox() {
