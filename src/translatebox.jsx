@@ -4,6 +4,7 @@ import itemData from "./data/item.json";
 import moveData from "./data/move.json";
 import natureData from "./data/nature.json";
 import React from "react";
+import styles from './translatebox.module.css';
 
 [abilityData, itemData, moveData].map((item) => {
     if (item.title.length === 12) {
@@ -34,9 +35,9 @@ export default function TranslateBox() {
   }
 
   return (
-    <>
+    <div className={styles.translateBox}>
       <SearchBar query={query} onChange={handleChange} />
-      {messages.length > 0 ? (<p><span className="flash-span-msg">{messages}</span> copied.</p>) : (<p>Click a result to copy.</p>)}
+      {messages.length > 0 ? (<p><span className={styles.flashSpanMsg}>{messages}</span> copied.</p>) : (<p>Click a result to copy.</p>)}
       
       <List
         type={ListTypeEnum.MOVE}
@@ -60,21 +61,19 @@ export default function TranslateBox() {
         resultHandler={handleClick}
       />
 
-    </>
+    </div>
   );
 }
 
 function SearchBar({ query, onChange }) {
   return (
-    <div className="searchbar">
+    <div className={styles.searchbar}>
       <label>
         Search: <input value={query} onChange={onChange} />
       </label>
     </div>
   );
 }
-
-
 
 function List({ type, query, maxResultSize=10, resultHandler }) {
   let data;
@@ -110,22 +109,22 @@ function List({ type, query, maxResultSize=10, resultHandler }) {
   return (
     <div>
       {hasData ? (
-        <table className="result">
+        <table className={styles.result}>
           <colgroup>
-            <col className="col-1" />
-            <col className="col-2" />
-            <col className="col-3" />
-            <col className="col-4" />
-            <col className="col-5" />
-            <col className="col-6" />
-            <col className="col-7" />
-            <col className="col-8" />
-            <col className="col-9" />
-            <col className="col-10" />
-            <col className="col-11" />
+            <col className={styles['col-1']} />
+            <col className={styles['col-2']} />
+            <col className={styles['col-3']} />
+            <col className={styles['col-4']} />
+            <col className={styles['col-5']} />
+            <col className={styles['col-6']} />
+            <col className={styles['col-7']} />
+            <col className={styles['col-8']} />
+            <col className={styles['col-9']} />
+            <col className={styles['col-10']} />
+            <col className={styles['col-11']} />
           </colgroup>
           <thead>
-            <tr className="res-title-tr">
+            <tr className={styles.resTitleTr}>
               {titles.map((t, id) => (
                 <th key={id}>{t}</th>
               ))}
@@ -133,7 +132,7 @@ function List({ type, query, maxResultSize=10, resultHandler }) {
           </thead>
           <tbody>
             {filterRes.map((col, id) => (
-              <tr key={id} className="res-data-tr">
+              <tr key={id} className={styles.resDataTr}>
                 {col.map((cell, id) => (
                   <td key={id} onClick={resultHandler}>{cell}</td>
                 ))}
@@ -142,7 +141,7 @@ function List({ type, query, maxResultSize=10, resultHandler }) {
           </tbody>
         </table>
       ) : (
-        <div className="placeholder">No result in {type.description}.</div>
+        <div className={styles.placeholder}>No result in {type.description}.</div>
       )}
     </div>
   );

@@ -1,0 +1,66 @@
+.translateBox {
+    text-align: center;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.flashSpanMsg {
+  color: greenyellow;
+  font-weight: bold;
+}
+
+.searchbar input {
+  width: 600px;
+  vertical-align: middle;
+}
+
+.searchbar {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.result {
+  border-collapse: collapse;
+  margin: 20px 0px;
+  width: 100%;
+}
+
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11 {
+  width: 88px;
+}
+
+.resTitleTr {
+  font-size: 14px;
+  color: yellow;
+}
+
+.resDataTr {
+  font-size: 12px;
+  border-top: solid white 1px;
+  border-bottom: solid white 1px;
+}
+
+.resDataTr:hover {
+  background-color: green;
+}
+
+.resDataTr td:hover {
+  color: red;
+  cursor: pointer;
+}

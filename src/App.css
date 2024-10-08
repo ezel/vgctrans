@@ -1,48 +1,3 @@
-.searchbar input {
-  width: 600px;
-  vertical-align: middle;
-}
-
-.searchbar {
-  margin-top: 40px;
-  margin-bottom: 20px;
-}
-
-.result {
-  border-collapse: collapse;
-  margin:20px 0px;
-  width: 100%;
-}
-
-.col-1, .col-2, .col-3, .col-4,
-.col-5, .col-6, .col-7, .col-8,
-.col-9, .col-10, .col-11 {
-  width: 88px;
-}
-.res-title-tr {
-  font-size: 14px;
-  color: yellow;
-}
-
-.res-data-tr {
-  font-size: 12px;
-  border-top: solid white 1px;
-  border-bottom: solid white 1px;
-}
-
-.res-data-tr:hover {
-  background-color: green;
-}
-
-.res-data-tr td:hover {
-  color: red;
-  cursor: pointer;
-}
-
-.App {
-  text-align: center;
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -52,17 +7,6 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .App-link {
