@@ -17,9 +17,15 @@ import styles from "./translatebox.module.css";
 export default function TranslateBox() {
   const [query, setQuery] = useState("");
   const [messages, setMessages] = useState("");
+  let timer;
 
   function handleChange(e) {
-    setQuery(e.target.value);
+    clearTimeout(timer);
+    timer = setTimeout(()=>{
+      // debounce
+      setQuery(e.target.value);
+      //console.log('starting search');
+    }, 200)
   }
 
   function handleClick(e) {
@@ -70,11 +76,11 @@ export default function TranslateBox() {
   );
 }
 
-function SearchBar({ query, onChange }) {
+function SearchBar({onChange }) {
   return (
     <div className={styles.searchbar}>
       <label>
-        Search: <input value={query} onChange={onChange} />
+        Search: <input onChange={onChange} />
       </label>
     </div>
   );
